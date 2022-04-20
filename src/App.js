@@ -27,7 +27,6 @@ function App() {
       return [item.category, ...cats];
     }
   }, []);
-  console.log("reduced categories: ", categories);
 
   let productCategories = categories.map((item) => {
     return <ProductSlider data={data} h2={item} category={item} />;

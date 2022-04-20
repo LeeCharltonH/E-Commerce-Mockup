@@ -1,9 +1,11 @@
 import styles from "./modalCard.module.scss";
 import { Button } from "../button";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const ModalCard = (props) => {
   const [checkout, setCheckout] = useState(false);
+  const basket = useSelector((state) => state.basketReducer);
 
   const checkoutMessage = () => {
     setCheckout(true)
