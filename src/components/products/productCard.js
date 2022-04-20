@@ -1,6 +1,6 @@
-import { Card } from "../../UI/card";
-import { Badge } from "../../UI/badge";
-import { Button } from "../../UI/button";
+import { Card } from "../UI/card";
+import { Badge } from "../UI/badge";
+import { Button } from "../UI/button";
 import styles from './productCard.module.scss';
 
 const ProductCard = (props) => {

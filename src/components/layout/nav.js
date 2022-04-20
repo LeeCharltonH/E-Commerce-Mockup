@@ -1,7 +1,7 @@
 import styles from "./nav.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
-import { Badge } from "../../UI/badge";
+import { Badge } from "../UI/badge";
 
 const Nav = (props) => {
   const modalHandler = props.modal;

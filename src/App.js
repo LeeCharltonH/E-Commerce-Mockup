@@ -2,7 +2,7 @@ import "./App.scss";
 import React, { useEffect, useState } from "react";
 import ProductSlider from "./components/products/productSlider";
 import Nav from "./components/layout/nav";
-import Modal from "./UI/modal/modal";
+import Modal from "./components/UI/modal/modal";
 
 function App() {
   const [data, setData] = useState([]);
