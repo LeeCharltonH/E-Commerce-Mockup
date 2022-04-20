@@ -1,0 +1,13 @@
+.sliderContainer{
+    width: 100%;
+    display: flex;
+    padding: 10px 5px;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+
+.sliderProducts{
+    display: flex;
+    overflow-x: scroll;
+    padding-bottom: 15px;
+}
