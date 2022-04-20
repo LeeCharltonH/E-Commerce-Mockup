@@ -1,0 +1,68 @@
+.modalCard {
+  z-index: 100;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  animation: open 0.5s ease-out;
+  min-width: 600px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    -webkit-transform: translate(-50%, -100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+  }
+}
+
+.modalButton {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modalButton:hover {
+  transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.basketBtn{
+  background-color: black;
+  padding: 5px;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  color: white;
+  text-transform: none;
+  font-size: 2em;
+  font-weight: 100;
+}
+
+@media (max-width: 660px) {
+  .modalCard {
+    min-width: 80%;
+  }
+}

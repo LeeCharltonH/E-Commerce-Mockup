@@ -2,9 +2,15 @@ import "./App.scss";
 import React, { useEffect, useState } from "react";
 import ProductSlider from "./components/products/productSlider";
 import Nav from "./components/layout/nav";
+import Modal from "./UI/modal/modal";
 
 function App() {
   const [data, setData] = useState([]);
+  const [modal, setModal] = useState(false);
+
+  const modalHandler = () => {
+    setModal(!modal);
+  };
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -29,11 +35,12 @@ function App() {
 
   return (
     <React.Fragment>
-      <Nav />
+      <Nav modal={modalHandler} />
       <div className="App">
         <h1>Ecommerce Demo</h1>
         {productCategories}
       </div>
+      {modal && <Modal modal={modalHandler} />}
     </React.Fragment>
   );
 }
