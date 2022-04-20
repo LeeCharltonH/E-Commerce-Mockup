@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import React, { useEffect, useState } from "react";
+import ProductSlider from "./components/products/productSlider";
+import Nav from "./components/layout/nav";
 
 function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((json) => {
+        setData(json);
+      });
+  }, []);
+
+  const categories = data.reduce((cats, item) => {
+    if (cats.indexOf(item.category) > -1) {
+      return [...cats];
+    } else {
+      return [item.category, ...cats];
+    }
+  }, []);
+  console.log("reduced categories: ", categories);
+
+  let productCategories = categories.map((item) => {
+    return <ProductSlider data={data} h2={item} category={item} />;
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Nav />
+      <div className="App">
+        <h1>Ecommerce Demo</h1>
+        {productCategories}
+      </div>
+    </React.Fragment>
   );
 }
 
