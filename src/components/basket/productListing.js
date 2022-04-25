@@ -5,6 +5,7 @@ const ProductListing = (props) => {
   const increase = props.increaseHandler;
   const decrease = props.decreaseHandler;
   const count = props.count;
+  const totalPrice = (item.price * item.quantity);
 
   return (
     <div className={styles.productContainer}>
@@ -16,7 +17,7 @@ const ProductListing = (props) => {
           {item.title}
         </p>
         <p className={styles.bold}>
-          {`£${item.price * item.quantity}`}
+          {`£${totalPrice.toFixed(2)}`}
         </p>
         <div>
           <button className={styles.quantityBtn} onClick={decrease}>

@@ -44,7 +44,7 @@ const ModalCard = (props) => {
       {basket.basket.length < 1 ? (
         <p>{"No items added to basket"}</p>
       ) : (
-        <p className={styles.bold}>{`Total price: £${totalPrice}`}</p>
+        <p className={styles.bold}>{`Total price: £${totalPrice.toFixed(2)}`}</p>
       )}
       <Button onClick={checkoutMessage}>
         Buy Now

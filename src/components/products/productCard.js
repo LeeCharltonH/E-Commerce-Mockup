@@ -7,6 +7,7 @@ import { basketActions } from "../../store";
 
 const ProductCard = (props) => {
   const dispatch = useDispatch();
+  const price = props.data.price;
 
   const addToBasket = () => {
     dispatch(basketActions.addItem({ item: props.data}));
@@ -17,8 +18,8 @@ const ProductCard = (props) => {
       <img src={props.data.image} className={styles.img} />
       <div>{props.data.title}</div>
       <div>
-        <Badge pill className="mb-1" bg="warning">
-          £{props.data.price}
+        <Badge>
+          £{price.toFixed(2)}
         </Badge>
       </div>
 
