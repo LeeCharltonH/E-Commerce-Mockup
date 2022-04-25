@@ -12,13 +12,18 @@ function App() {
     setModal(!modal);
   };
 
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((json) => {
-        setData(json);
+        const arr = json.map((item) => {
+          return { ...item, quantity: 1 };
+        });
+        setData(arr);
       });
   }, []);
+ 
 
   const categories = data.reduce((cats, item) => {
     if (cats.indexOf(item.category) > -1) {
@@ -29,7 +34,7 @@ function App() {
   }, []);
 
   let productCategories = categories.map((item) => {
-    return <ProductSlider data={data} h2={item} category={item} />;
+    return <ProductSlider data={data} h2={item} category={item} key={Math.random()}/>;
   });
 
   return (
