@@ -24,6 +24,8 @@ const ModalCard = (props) => {
       dispatch(basketActions.removeItem({item: item}))
     }
 
+    const count = (item.quantity == 5);
+
     return (
       <div key={`${item.id}_${Math.random()}`}>
         <div>
@@ -36,8 +38,9 @@ const ModalCard = (props) => {
         </div>
         <div>
           <button className={styles.quantityBtn} onClick={decreaseQuantity}>-</button>
-          {item.quantity}
-          <button className={styles.quantityBtn} onClick={increaseQuantity}>+</button>
+          {item.quantity } 
+          <button className={count ? `${styles.quantityBtn} ${styles.maxCount}` : `${styles.quantityBtn}` } onClick={increaseQuantity} disabled={count}>+</button>
+          {count && <p>Max 5 items allowed</p>}
         </div>
       </div>
     );

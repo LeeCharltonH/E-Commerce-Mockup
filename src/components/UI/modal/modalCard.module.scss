@@ -69,6 +69,10 @@
   cursor: pointer;
 }
 
+.maxCount{
+  opacity: 0.2;
+}
+
 @media (max-width: 660px) {
   .modalCard {
     min-width: 80%;

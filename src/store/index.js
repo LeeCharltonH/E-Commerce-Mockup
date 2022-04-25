@@ -7,15 +7,15 @@ const basketSlice = createSlice({
   initialState: initialState,
   reducers: {
     addItem(state, action) {
-      let exists = state.basket.some(
+      let inBasket = state.basket.some(
         (item) => item.id === action.payload.item.id
       );
-      if (exists) {
-        const index = state.basket.findIndex(object => {
-            return object.id === action.payload.item.id;
-          });
+      const index = state.basket.findIndex(object => {
+        return object.id === action.payload.item.id;
+      });
+      
+      if (inBasket) {
         state.basket[index].quantity = state.basket[index].quantity + 1;
-    
       } else {
         state.basket = [...state.basket, action.payload.item];
       }
