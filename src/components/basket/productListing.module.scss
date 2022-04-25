@@ -1,0 +1,32 @@
+.productContainer{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    margin: 15px 0;
+    min-height: 130px;
+    align-items: center;
+}
+
+.productDetails{
+    padding: 0 10px;
+    div {
+        margin: 5px 0;
+    }
+    p{
+        margin: 5px 0;
+    }
+    .bold{
+        font-weight: bold;
+    }
+}
+
+.quantityBtn{
+    margin: 0 3px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .maxCount{
+    opacity: 0.2;
+  }
