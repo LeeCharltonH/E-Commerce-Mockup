@@ -2,10 +2,13 @@ import styles from "./modalCard.module.scss";
 import { Button } from "../button";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { basketActions } from "../../../store";
 
 const ModalCard = (props) => {
   const [checkout, setCheckout] = useState(false);
   const basket = useSelector((state) => state.basketReducer);
+  const dispatch = useDispatch();
   
   const checkoutMessage = () => {
     setCheckout(true);
@@ -13,6 +16,14 @@ const ModalCard = (props) => {
   };
 
   let products = basket.basket.map((item) => {
+    const increaseQuantity = () => {
+      dispatch(basketActions.addItem({item: item}))
+    }
+
+    const decreaseQuantity = () => {
+      dispatch(basketActions.removeItem({item: item}))
+    }
+
     return (
       <div key={`${item.id}_${Math.random()}`}>
         <div>
@@ -23,7 +34,11 @@ const ModalCard = (props) => {
           <br />
           {`£${item.price * item.quantity}`}
         </div>
-        <div>{item.title}</div>
+        <div>
+          <button className={styles.quantityBtn} onClick={decreaseQuantity}>-</button>
+          {item.quantity}
+          <button className={styles.quantityBtn} onClick={increaseQuantity}>+</button>
+        </div>
       </div>
     );
   });
