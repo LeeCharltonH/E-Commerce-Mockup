@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import ProductSlider from "./components/products/productSlider";
 import Nav from "./components/layout/nav";
 import Modal from "./components/UI/modal/modal";
+import Header from "./components/layout/header";
+import Homepage from "./components/pages/homepages";
 
 function App() {
   const [data, setData] = useState([]);
@@ -11,7 +13,6 @@ function App() {
   const modalHandler = () => {
     setModal(!modal);
   };
-
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -23,26 +24,13 @@ function App() {
         setData(arr);
       });
   }, []);
- 
 
-  const categories = data.reduce((cats, item) => {
-    if (cats.indexOf(item.category) > -1) {
-      return [...cats];
-    } else {
-      return [item.category, ...cats];
-    }
-  }, []);
-
-  let productCategories = categories.map((item) => {
-    return <ProductSlider data={data} h2={item} category={item} key={Math.random()}/>;
-  });
 
   return (
     <React.Fragment>
-      <Nav modal={modalHandler} />
       <div className="App">
-        <h1>Ecommerce Demo</h1>
-        {productCategories}
+      <Header modal={modalHandler} data={data}/>
+      <Homepage data={data} />
       </div>
       {modal && <Modal modal={modalHandler} />}
     </React.Fragment>
