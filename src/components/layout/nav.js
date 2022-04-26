@@ -4,10 +4,10 @@ import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { Badge } from "../UI/badge";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Nav = (props) => {
-  const [category, setCategory] = useState('');
-  console.log(category)
+  
   const data = props.data;
   const basket = useSelector((state) => state.basketReducer);
   const modalHandler = props.modal;
@@ -15,14 +15,8 @@ const Nav = (props) => {
     <FontAwesomeIcon icon={faBagShopping} className={styles.icon} />
   );
   const itemCount = basket.basket.reduce((prevVal, currentVal) => {
-    return prevVal + currentVal.quantity
+    return prevVal + currentVal.quantity;
   }, 0);
-
-  const categoryHandler = (e) => {
-    const innerHTML = e.target.innerHTML;
-    const category = innerHTML.replace("'", '').replace(" ", "-");
-    setCategory(category);
-  }
 
   const categories = data.reduce((cats, item) => {
     if (cats.indexOf(item.category) > -1) {
@@ -35,7 +29,16 @@ const Nav = (props) => {
   return (
     <nav className={styles.nav}>
       <ul>
-        {categories.map(item => {return <li key={Math.random()} onClick={categoryHandler}>{item}</li>})}
+        {categories.map((item) => {
+          const url = item.replace("'", "").replace(" ","-");
+          return (
+            <Link to={`/${url}`} key={Math.random()}>
+              <li>
+                {item}
+              </li>
+            </Link>
+          );
+        })}
       </ul>
       <div className={styles.cart} onClick={modalHandler}>
         Basket {bagIcon} <Badge>{itemCount}</Badge>
