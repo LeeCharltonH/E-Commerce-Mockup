@@ -7,7 +7,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Nav = (props) => {
-  
+  const [mobileNav, setMobileNav] = useState(false);
   const data = props.data;
   const basket = useSelector((state) => state.basketReducer);
   const modalHandler = props.modal;
@@ -26,16 +26,19 @@ const Nav = (props) => {
     }
   }, []);
 
+  const navHandler = () => {
+    setMobileNav(prevState => !prevState);
+  }
+
   return (
     <nav className={styles.nav}>
-      <ul>
+      <div className={styles.mobileNav} onClick={navHandler}>==<br />==</div>
+      <ul className={mobileNav ? `${styles.show}`: ''}>
         {categories.map((item) => {
-          const url = item.replace("'", "").replace(" ","-");
+          const url = item.replace("'", "").replace(" ", "-");
           return (
             <Link to={`/${url}`} key={Math.random()}>
-              <li>
-                {item}
-              </li>
+              <li onClick={() => setMobileNav(false)}>{item}</li>
             </Link>
           );
         })}

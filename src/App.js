@@ -34,18 +34,13 @@ function App() {
   }, []);
 
   const categoryPages = categories.map((item) => {
-    const url = item.replace("'", "").replace(" ","-");
+    const url = item.replace("'", "").replace(" ", "-");
     return (
       <Route
+        key={categories.indexOf(item)}
         exact
         path={`/${url}`}
-        element={
-          <CategoryPage
-            h2={item}
-            category={item}
-            data={data}
-          />
-        }
+        element={<CategoryPage h2={item} category={item} data={data} />}
       />
     );
   });
