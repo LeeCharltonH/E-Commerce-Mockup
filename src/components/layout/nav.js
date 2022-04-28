@@ -27,13 +27,23 @@ const Nav = (props) => {
   }, []);
 
   const navHandler = () => {
-    setMobileNav(prevState => !prevState);
-  }
+    setMobileNav((prevState) => !prevState);
+  };
 
   return (
     <nav className={styles.nav}>
-      <div className={styles.mobileNav} onClick={navHandler}>==<br />==</div>
-      <ul className={mobileNav ? `${styles.show}`: ''}>
+      <div
+        className={`${styles.navicon3} ${styles.mobileNav} ${
+          mobileNav && styles.open
+        }`}
+        onClick={navHandler}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul className={mobileNav ? `${styles.show}` : ""}>
         {categories.map((item) => {
           const url = item.replace("'", "").replace(" ", "-");
           return (

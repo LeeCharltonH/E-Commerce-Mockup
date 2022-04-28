@@ -22,8 +22,6 @@ export const Featured = (props) => {
 
   const test = data[0].image;
 
-  console.log(test)
-
   return (
     <Carousel autoPlay showArrows={true} showThumbs={false} showStatus={false}>
       <div className={styles.carouselCard}>

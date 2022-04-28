@@ -1,11 +1,12 @@
 .header{
-    background-image: url(../../assets/header-background.jpeg);
-    background-repeat: no-repeat;
-    
-    background-position: -100px;
+    background-color: #fbcb05;
     width: 100%;
+    text-align: left;
+    h1 {
+        padding: 0 20px;
+    }
     a {
         text-decoration: none;
-        color: white;
+        color: black;
     }
 }
