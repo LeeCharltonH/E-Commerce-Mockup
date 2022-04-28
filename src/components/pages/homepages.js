@@ -1,4 +1,5 @@
 import React from "react";
+import CategoryHighlights from "../products/categoryHighlights";
 import ProductSlider from "../products/productSlider";
 import { Featured } from "../UI/featured";
 
@@ -24,10 +25,21 @@ const Homepage = (props) => {
     );
   });
 
+  let categoryHighlights = categories.map((item) => {
+    return (
+      <CategoryHighlights
+        data={data}
+        h2={item}
+        category={item}
+        key={Math.random()}
+      />
+    );
+  });
+
   return (
     <React.Fragment>
-    {data.length > 0 && <Featured data={data} categories={categories} />}
-      {productCategories}
+      {data.length > 0 && <Featured data={data} categories={categories} />}
+      {categoryHighlights}
     </React.Fragment>
   );
 };

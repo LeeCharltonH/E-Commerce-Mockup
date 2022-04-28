@@ -1,7 +1,7 @@
 .button{
     border-radius: 5px;
     cursor: pointer;
-    background-color: green;
+    background-color: black;
     font-weight: bold;
     padding: 5px 10px;
     width: 100%;
@@ -10,8 +10,8 @@
     text-transform: uppercase;
 }
 
-.button:focus{
-    outline: 2px solid green;
-    outline-offset: 2px;
-    transition: all 0.3s;
+.button:hover{
+    outline: 2px solid black;
+    outline-offset: 1px;
+    transition: all 0.1s;
 }

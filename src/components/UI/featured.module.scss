@@ -1,10 +1,30 @@
 .carouselCard {
-  background-color: cyan;
+  background-color: #fbcb05;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.control-dots {
-  background-color: red;
+  flex-direction: column;
+  padding: 40px 20px;
+  color: black;
+  text-transform: uppercase;
+ 
+  img {
+    height: 300px;
+    width: auto;
+    border-radius: 10px;
+  }
+  button {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 10px;
+  }
 }

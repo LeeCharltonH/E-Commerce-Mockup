@@ -1,6 +1,6 @@
 import { Carousel } from "react-responsive-carousel";
-import ProductCard from "../products/productCard";
-import styles from './featured.module.scss';
+import { Button } from "./button";
+import styles from "./featured.module.scss";
 
 export const Featured = (props) => {
   const data = props.data;
@@ -22,9 +22,7 @@ export const Featured = (props) => {
 
   const test = data[0].image;
 
-  return (
-    <Carousel autoPlay showArrows={true} showThumbs={false} showStatus={false}>
-      <div className={styles.carouselCard}>
+  /*<div className={styles.carouselCard}>
         <ProductCard data={featured()[0]} />
       </div>
       <div className={styles.carouselCard}>
@@ -35,6 +33,45 @@ export const Featured = (props) => {
       </div>
       <div className={styles.carouselCard}>
         <ProductCard data={featured()[3]} />
+      </div> */
+
+  return (
+    <Carousel autoPlay showArrows={true} showThumbs={false} showStatus={false}>
+      <div className={styles.carouselCard}>
+        <div>
+          <div>
+            <img src={featured()[0].image} />
+          </div>
+          <h3>{featured()[0].title} </h3>
+          <Button>Add To Cart</Button>
+        </div>
+      </div>
+      <div className={styles.carouselCard}>
+        <div>
+          <div>
+            <img src={featured()[1].image} />
+          </div>
+          <h3>{featured()[1].title} </h3>
+          <Button>Add To Cart</Button>
+        </div>
+      </div>
+      <div className={styles.carouselCard}>
+        <div>
+          <div>
+            <img src={featured()[2].image} />
+          </div>
+          <h3>{featured()[2].title} </h3>
+          <Button>Add To Cart</Button>
+        </div>
+      </div>
+      <div className={styles.carouselCard}>
+        <div>
+          <div>
+            <img src={featured()[3].image} />
+          </div>
+          <h3>{featured()[3].title} </h3>
+          <Button>Add To Cart</Button>
+        </div>
       </div>
     </Carousel>
   );
