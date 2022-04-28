@@ -14,7 +14,7 @@ const ProductCard = (props) => {
   };
 
   return (
-    <Card>
+    <Card className={props.className}>
       <div className={styles.imgContainer}>
         <img src={props.data.image} className={styles.img} />
       </div>

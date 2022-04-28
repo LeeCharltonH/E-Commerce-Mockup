@@ -12,9 +12,7 @@ const CategoryHighlights = (props) => {
     const itemIndex = index;
     if (itemIndex < 3) {
       return (
-        <div key={item.id} className={styles.productItem} >
-          <ProductCard data={item}/>
-        </div>
+          <ProductCard key={Math.random()} className={styles.productItem} data={item}/>
       );
     }
   });

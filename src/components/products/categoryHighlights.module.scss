@@ -1,10 +1,15 @@
+.categoryHighlights{
+    padding: 20px 0;
+    text-transform: capitalize; 
+    width: 100%;
+}
+
 .productContainer {
     width:  100%;
     display: flex;
     flex-wrap: wrap;
     padding-top: 20px;
     margin-bottom: 40px; 
-    align-items: center;
     justify-content: center;  
 }
 
@@ -27,20 +32,16 @@
     margin: 0 20px;
 }
 
-.categoryHighlights{
-    padding: 20px 0;
-    text-transform: capitalize; 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 .categoryHighlights:nth-child(odd){
     background-color: black;
     color: black;
     .button {
         background-color: white;
+    }
+    h2{
+        color:white
     }
 }
 
