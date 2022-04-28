@@ -5,6 +5,7 @@ import Header from "./components/layout/header";
 import Homepage from "./components/pages/homepages";
 import { Route, Routes } from "react-router-dom";
 import CategoryPage from "./components/pages/categorypage";
+import Footer from "./components/layout/footer";
 
 function App() {
   const [data, setData] = useState([]);
@@ -55,6 +56,7 @@ function App() {
             {categoryPages}
           </Routes>
         </main>
+        <Footer />
       </div>
       {modal && <Modal modal={modalHandler} />}
     </React.Fragment>
