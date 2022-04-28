@@ -1,5 +1,6 @@
 import React from "react";
 import ProductSlider from "../products/productSlider";
+import { Featured } from "../UI/featured";
 
 const Homepage = (props) => {
   const data = props.data;
@@ -22,7 +23,13 @@ const Homepage = (props) => {
       />
     );
   });
-  return <React.Fragment>{productCategories}</React.Fragment>
+
+  return (
+    <React.Fragment>
+    {data.length > 0 && <Featured data={data} categories={categories} />}
+      {productCategories}
+    </React.Fragment>
+  );
 };
 
 export default Homepage;
