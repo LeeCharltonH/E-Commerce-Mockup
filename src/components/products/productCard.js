@@ -10,17 +10,17 @@ const ProductCard = (props) => {
   const price = props.data.price;
 
   const addToBasket = () => {
-    dispatch(basketActions.addItem({ item: props.data}));
+    dispatch(basketActions.addItem({ item: props.data }));
   };
 
   return (
     <Card>
-      <img src={props.data.image} className={styles.img} />
+      <div className={styles.imgContainer}>
+        <img src={props.data.image} className={styles.img} />
+      </div>
       <div>{props.data.title}</div>
       <div>
-        <Badge>
-          £{price.toFixed(2)}
-        </Badge>
+        <Badge>£{price.toFixed(2)}</Badge>
       </div>
 
       <Button onClick={addToBasket}>Add To Cart</Button>

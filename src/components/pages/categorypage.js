@@ -25,9 +25,9 @@ const CategoryPage = (props) => {
 
   let products = category.map((item) => {
     return (
-      <div key={item.id}>
-        <ProductCard data={item} />
-      </div>
+    
+        <ProductCard data={item} key={item.id}/>
+    
     );
   });
 
