@@ -1,5 +1,26 @@
-.productContainer{
-    display: flex;
-    flex-wrap: wrap;
+.categoryContainer{
     width: 100%;
+}
+
+.categoryItems {
+  display: flex;
+  align-items: flex-start;
+  
+}
+
+.productContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+h2{
+    text-transform: capitalize;
+}
+
+@media (max-width: 600px) {
+  .categoryItems {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

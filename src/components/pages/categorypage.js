@@ -4,11 +4,13 @@ import Filter from "../UI/filter";
 import { useState, useEffect } from "react";
 
 const CategoryPage = (props) => {
-  const maxPrice = props.data.filter((item) => item.category === props.category).sort((a,b) => b.price - a.price)
+  const maxPrice = props.data
+    .filter((item) => item.category === props.category)
+    .sort((a, b) => b.price - a.price);
 
   const [price, setPrice] = useState(Math.ceil(maxPrice[0].price));
   const [sortProducts, setSortProducts] = useState("");
-  useEffect(() => setPrice(Math.ceil(maxPrice[0].price)), [props.category])
+  useEffect(() => setPrice(Math.ceil(maxPrice[0].price)), [props.category]);
 
   const category = props.data
     .filter((item) => item.category === props.category)
@@ -24,11 +26,7 @@ const CategoryPage = (props) => {
     });
 
   let products = category.map((item) => {
-    return (
-    
-        <ProductCard data={item} key={item.id}/>
-    
-    );
+    return <ProductCard data={item} key={item.id} />;
   });
 
   const priceHandler = (x) => setPrice(x);
@@ -36,14 +34,17 @@ const CategoryPage = (props) => {
 
   return (
     <div className={styles.categoryContainer}>
-      <Filter
-        price={Math.ceil(maxPrice[0].price)}
-        priceHandler={priceHandler}
-        sortProductsHandler={sortProductsHandler}
-      />
       <h2>{props.h2}</h2>
-      <div className={styles.productContainer}>
-        {props.data.length < 1 ? "Is Loading" : products}
+      <div className={styles.categoryItems}>
+        <Filter
+          price={Math.ceil(maxPrice[0].price)}
+          priceHandler={priceHandler}
+          sortProductsHandler={sortProductsHandler}
+        />
+
+        <div className={styles.productContainer}>
+          {props.data.length < 1 ? "Is Loading" : products}
+        </div>
       </div>
     </div>
   );
