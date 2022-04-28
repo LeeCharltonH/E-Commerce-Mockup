@@ -8,6 +8,7 @@ const CategoryPage = (props) => {
 
   const [price, setPrice] = useState(Math.ceil(maxPrice[0].price));
   const [sortProducts, setSortProducts] = useState("");
+  useEffect(() => setPrice(Math.ceil(maxPrice[0].price)), [props.category])
 
   const category = props.data
     .filter((item) => item.category === props.category)
