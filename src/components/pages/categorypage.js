@@ -7,16 +7,18 @@ const CategoryPage = (props) => {
   const maxPrice = props.data
     .filter((item) => item.category === props.category)
     .sort((a, b) => b.price - a.price);
+  
 
   const [price, setPrice] = useState(Math.ceil(maxPrice[0].price));
-  const [sortProducts, setSortProducts] = useState("");
+  const [sortProducts, setSortProducts] = useState("Default");
+
   useEffect(() => setPrice(Math.ceil(maxPrice[0].price)), [props.category]);
 
   const category = props.data
     .filter((item) => item.category === props.category)
     .filter((item) => item.price <= price)
     .sort((a, b) => {
-      if (sortProducts.length < 1) {
+      if (sortProducts === "Default") {
         return;
       } else if (sortProducts === "Price low to high") {
         return a.price - b.price;
@@ -37,9 +39,11 @@ const CategoryPage = (props) => {
       <h2>{props.h2}</h2>
       <div className={styles.categoryItems}>
         <Filter
-          price={Math.ceil(maxPrice[0].price)}
+          initialPrice={Math.ceil(maxPrice[0].price)}
+          selectedPrice={price}
           priceHandler={priceHandler}
           sortProductsHandler={sortProductsHandler}
+          sort={sortProducts}
         />
 
         <div className={styles.productContainer}>
