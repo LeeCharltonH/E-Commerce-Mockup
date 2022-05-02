@@ -20,21 +20,6 @@ export const Featured = (props) => {
     return [item1, item2, item3, item4];
   };
 
-  const test = data[0].image;
-
-  /*<div className={styles.carouselCard}>
-        <ProductCard data={featured()[0]} />
-      </div>
-      <div className={styles.carouselCard}>
-        <ProductCard data={featured()[1]} />
-      </div>
-      <div className={styles.carouselCard}>
-        <ProductCard data={featured()[2]} />
-      </div>
-      <div className={styles.carouselCard}>
-        <ProductCard data={featured()[3]} />
-      </div> */
-
   return (
     <Carousel autoPlay showArrows={true} showThumbs={false} showStatus={false}>
       <div className={styles.carouselCard}>
@@ -65,7 +50,7 @@ export const Featured = (props) => {
         </div>
       </div>
       <div className={styles.carouselCard}>
-        <div>
+        <div>  
           <div>
             <img src={featured()[3].image} />
           </div>
