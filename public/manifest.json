@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Mega Shop",
+  "name": "A mock up ecommerce website. Visit https://leehassall.com/ to view my full portfolio.",
   "icons": [
     {
       "src": "favicon.ico",

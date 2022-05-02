@@ -8,7 +8,7 @@ const Header = (props) => {
   return (
     <header className={styles.header}>
       <Link to="/">
-        <h1>Nook Shop</h1>
+        <h1>Mega Shop</h1>
       </Link>
       <Nav modal={props.modal} data={data} />
     </header>
