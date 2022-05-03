@@ -1,8 +1,11 @@
 import { Carousel } from "react-responsive-carousel";
 import { Button } from "./button";
 import styles from "./featured.module.scss";
+import { useDispatch } from "react-redux";
+import { basketActions } from "../../store";
 
 export const Featured = (props) => {
+  const dispatch = useDispatch();
   const data = props.data;
   const categories = props.categories;
 
@@ -28,16 +31,24 @@ export const Featured = (props) => {
             <img src={featured()[0].image} alt={featured()[0].title} />
           </div>
           <h3>{featured()[0].title} </h3>
-          <Button>Add To Cart</Button>
+          <Button
+            onClick={() => {
+              dispatch(basketActions.addItem({ item: featured()[0] }));
+            }}
+          >
+            Add To Cart
+          </Button>
         </div>
       </div>
       <div className={styles.carouselCard}>
         <div>
           <div>
-            <img src={featured()[1].image} alt={featured()[1].title}/>
+            <img src={featured()[1].image} alt={featured()[1].title} />
           </div>
           <h3>{featured()[1].title} </h3>
-          <Button>Add To Cart</Button>
+          <Button onClick={() => {
+              dispatch(basketActions.addItem({ item: featured()[1] }));
+            }}>Add To Cart</Button>
         </div>
       </div>
       <div className={styles.carouselCard}>
@@ -46,16 +57,20 @@ export const Featured = (props) => {
             <img src={featured()[2].image} alt={featured()[2].title} />
           </div>
           <h3>{featured()[2].title} </h3>
-          <Button>Add To Cart</Button>
+          <Button onClick={() => {
+              dispatch(basketActions.addItem({ item: featured()[2] }));
+            }}>Add To Cart</Button>
         </div>
       </div>
       <div className={styles.carouselCard}>
-        <div>  
+        <div>
           <div>
             <img src={featured()[3].image} alt={featured()[3].title} />
           </div>
           <h3>{featured()[3].title} </h3>
-          <Button>Add To Cart</Button>
+          <Button onClick={() => {
+              dispatch(basketActions.addItem({ item: featured()[3] }));
+            }}>Add To Cart</Button>
         </div>
       </div>
     </Carousel>
