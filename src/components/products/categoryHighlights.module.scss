@@ -2,6 +2,14 @@
   padding: 20px 0px;
   text-transform: capitalize;
   width: 100%;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  button {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .productContainer {
@@ -41,6 +49,14 @@
   }
   h2 {
     color: white;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  button {
+    text-decoration: none;
+    color: black;
   }
 }
 
