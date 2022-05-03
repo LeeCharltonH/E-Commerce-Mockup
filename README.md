@@ -1,15 +1,16 @@
 # E-Commerce Mega Shop
 
-Live demo available at - ....
+Live demo available [here](https://e-commerce-mockup.web.app/)
 
 I built this mockup of an e-commerce website to demonstrate my skills in frontend development. Please note the project is a work in progress and more features will be added later down the line. Refer to the 'Further Development' section for more details.
 
 ## User Stories
 
-- Browse the store by category
-- Filter products by price
-- Discover new products via featured products components on the homepage
-- Store products to a shopping cart to purchase at a later point
+- As a customer:
+    - I want to browse the store by category to find the most relevant products as easily as possible.
+    - I'd like to filter a list of products by price to refine my search.
+    - I'd like to be inspired by browsing by browsing suggested products.
+    - I want to add products to a shopping cart which I can edit along my user journery.
 
 
 ## Further Development
