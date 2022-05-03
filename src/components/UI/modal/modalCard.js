@@ -29,7 +29,7 @@ const ModalCard = (props) => {
       dispatch(basketActions.removeItem({ item: item }));
     };
 
-    const count = item.quantity == 5;
+    const count = item.quantity === 5;
 
     return <ProductListing data={item} key={`${item.id}_${Math.random()}`} increaseHandler={increaseQuantity} decreaseHandler={decreaseQuantity} count={count} />;
   });

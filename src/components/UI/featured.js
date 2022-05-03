@@ -25,7 +25,7 @@ export const Featured = (props) => {
       <div className={styles.carouselCard}>
         <div>
           <div>
-            <img src={featured()[0].image} />
+            <img src={featured()[0].image} alt={featured()[0].title} />
           </div>
           <h3>{featured()[0].title} </h3>
           <Button>Add To Cart</Button>
@@ -34,7 +34,7 @@ export const Featured = (props) => {
       <div className={styles.carouselCard}>
         <div>
           <div>
-            <img src={featured()[1].image} />
+            <img src={featured()[1].image} alt={featured()[1].title}/>
           </div>
           <h3>{featured()[1].title} </h3>
           <Button>Add To Cart</Button>
@@ -43,7 +43,7 @@ export const Featured = (props) => {
       <div className={styles.carouselCard}>
         <div>
           <div>
-            <img src={featured()[2].image} />
+            <img src={featured()[2].image} alt={featured()[2].title} />
           </div>
           <h3>{featured()[2].title} </h3>
           <Button>Add To Cart</Button>
@@ -52,7 +52,7 @@ export const Featured = (props) => {
       <div className={styles.carouselCard}>
         <div>  
           <div>
-            <img src={featured()[3].image} />
+            <img src={featured()[3].image} alt={featured()[3].title} />
           </div>
           <h3>{featured()[3].title} </h3>
           <Button>Add To Cart</Button>

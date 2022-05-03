@@ -7,19 +7,22 @@ const CategoryPage = (props) => {
   const maxPrice = props.data
     .filter((item) => item.category === props.category)
     .sort((a, b) => b.price - a.price);
-  
-
   const [price, setPrice] = useState(Math.ceil(maxPrice[0].price));
   const [sortProducts, setSortProducts] = useState("Default");
 
-  useEffect(() => setPrice(Math.ceil(maxPrice[0].price)), [props.category]);
+  useEffect(() => {
+    const setMaxPrice = props.data
+      .filter((item) => item.category === props.category)
+      .sort((a, b) => b.price - a.price);
+    setPrice(Math.ceil(setMaxPrice[0].price));
+  }, [props.category, props.data]);
 
   const category = props.data
     .filter((item) => item.category === props.category)
     .filter((item) => item.price <= price)
     .sort((a, b) => {
       if (sortProducts === "Default") {
-        return;
+        return [];
       } else if (sortProducts === "Price low to high") {
         return a.price - b.price;
       } else {

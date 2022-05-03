@@ -10,7 +10,7 @@ const ProductListing = (props) => {
   return (
     <div className={styles.productContainer}>
       <div>
-        <img src={item.image} width="100" />
+        <img src={item.image} width="100" alt={item.title} />
       </div>
       <div className={styles.productDetails}>
         <p>

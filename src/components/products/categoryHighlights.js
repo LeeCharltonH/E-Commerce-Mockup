@@ -15,6 +15,7 @@ const CategoryHighlights = (props) => {
           <ProductCard key={Math.random()} className={styles.productItem} data={item}/>
       );
     }
+    return [];
   });
 
   const url = props.category.replace("'", "").replace(" ", "-");

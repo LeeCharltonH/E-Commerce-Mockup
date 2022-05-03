@@ -1,6 +1,5 @@
 import React from "react";
 import CategoryHighlights from "../products/categoryHighlights";
-import ProductSlider from "../products/productSlider";
 import { Featured } from "../UI/featured";
 
 const Homepage = (props) => {
@@ -13,17 +12,6 @@ const Homepage = (props) => {
       return [item.category, ...cats];
     }
   }, []);
-
-  let productCategories = categories.map((item) => {
-    return (
-      <ProductSlider
-        data={data}
-        h2={item}
-        category={item}
-        key={Math.random()}
-      />
-    );
-  });
 
   let categoryHighlights = categories.map((item) => {
     return (
