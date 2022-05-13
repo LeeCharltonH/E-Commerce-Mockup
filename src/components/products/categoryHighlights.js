@@ -26,7 +26,7 @@ const CategoryHighlights = (props) => {
       <div className={styles.productContainer}>
         {props.data.length < 1 ? "Is Loading" : products}
       </div>
-      <Link to={`/${url}`}><button className={styles.button}>View More</button></Link>
+      <Link to={`/${url}`}><button className={styles.viewMoreBtn}>View More</button></Link>
       
     </section>
   );

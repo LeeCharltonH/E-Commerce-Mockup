@@ -6,10 +6,7 @@
     text-decoration: none;
     color: black;
   }
-  button {
-    text-decoration: none;
-    color: black;
-  }
+  
 }
 
 .productContainer {
@@ -21,7 +18,7 @@
   justify-content: center;
 }
 
-.button {
+.viewMoreBtn {
   border: 1px solid black;
   background-color: transparent;
   font-weight: bold;
@@ -31,6 +28,7 @@
   padding: 10px 20px;
   border-radius: 5px;
 }
+
 .productContainer > div:nth-child(1),
 .productContainer > div:nth-child(3) {
   transform: translateY(-30px);
@@ -44,7 +42,7 @@
 .categoryHighlights:nth-child(odd) {
   background-color: black;
   color: black;
-  .button {
+  .viewMoreBtn {
     background-color: white;
   }
   h2 {
@@ -53,10 +51,6 @@
   a {
     text-decoration: none;
     color: white;
-  }
-  button {
-    text-decoration: none;
-    color: black;
   }
 }
 
