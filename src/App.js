@@ -6,6 +6,7 @@ import Homepage from "./components/pages/homepages";
 import { Route, Routes } from "react-router-dom";
 import CategoryPage from "./components/pages/categorypage";
 import Footer from "./components/layout/footer";
+import products from './products.json';
 
 function App() {
   const [data, setData] = useState([]);
@@ -15,16 +16,14 @@ function App() {
     setModal(!modal);
   };
 
+  
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => {
-        const arr = json.map((item) => {
-          return { ...item, quantity: 1 };
-        });
-        setData(arr);
-      });
-  }, []);
+    const productData = products.map((item) => {
+      return { ...item, quantity: 1 };
+    });
+    setData(productData);
+  }, [])
+
 
   const categories = data.reduce((cats, item) => {
     if (cats.indexOf(item.category) > -1) {
